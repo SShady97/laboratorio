@@ -13,5 +13,5 @@ use App\Http\Controllers\ServiceController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::resource('services', ServiceController::class);
+Route::get('/admin/services','App\Http\Controllers\ServiceController@index')->name('admin.service.index');
+Route::get('/admin', 'App\Http\Controllers\Admin\AdminHomeController@index')->name("admin.home.index");

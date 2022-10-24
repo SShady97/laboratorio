@@ -12,7 +12,10 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services = Service::orderBy('id')->paginate(15);
-        return view('services.index', compact('services'));
+        $viewData = [];
+        $viewData["title"] = "Página de Administración - Laboratorio";
+        $viewData["services"] = Service::orderBy('id')->paginate(15);
+        return view('admin.service.index')->with('viewData', $viewData);
+        
     }
 }
